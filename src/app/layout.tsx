@@ -1,5 +1,5 @@
 import Navbar from '@/components/Navbar'
-// import { Toaster } from '@/components/ui/toast'
+import { Toaster } from '@/components/ui/Toast'
 import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
 
@@ -22,7 +22,8 @@ export default function RootLayout({
         <Providers>
           {/* @ts-expect-error Server Component */}
           <Navbar />
-          {/* <Toaster position='bottom-right' /> */}
+          {/* notification position */}
+          <Toaster position='bottom-right' />
 
           {/* <MobileMenu /> */}
 
