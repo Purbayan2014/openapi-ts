@@ -1,12 +1,13 @@
+import Navbar from '@/components/Navbar'
+// import { Toaster } from '@/components/ui/toast'
 import '@/styles/globals.css'
-import { Inter } from 'next/font/google' 
-import { cn } from '@/lib/utils'
-import { Providers } from '@/components/Providers'
-import { Navbar } from '@/components/Navbar'
+import { Inter } from 'next/font/google'
 
-const Inter = Inter({
-    subsets : ['latin'] 
-})
+// import MobileMenu from '@/components/MobileMenu'
+import Providers from '@/components/Providers'
+import { cn } from '@/lib/utils'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
   children,
@@ -14,16 +15,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={cn(
-        'bg-white text-slate-900 antialiased', inter.className
-      )}>
+    <html
+      lang='en'
+      className={cn('bg-white text-slate-900 antialiased', inter.className)}>
       <body className='min-h-screen bg-slate-50 dark:bg-slate-900 antialiased'>
         <Providers>
-          {children}
+          {/* @ts-expect-error Server Component */}
           <Navbar />
+          {/* <Toaster position='bottom-right' /> */}
+
+          {/* <MobileMenu /> */}
+
+          <main>{children}</main>
         </Providers>
-       {/* Need to allow more height on mobile devices */}
-       <div className='h-40 md:hidden'/>
+
+        {/* Allow more height for mobile menu on mobile */}
+        <div className='h-40 md:hidden' />
       </body>
     </html>
   )
