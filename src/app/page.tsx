@@ -43,7 +43,7 @@ export default function Home() {
               (max-width: 1200px) 50vw,
               33vw"
               src='/codex.png'
-              alt='typewriter'
+              alt='codex image'
             />
           </div>
         </div>

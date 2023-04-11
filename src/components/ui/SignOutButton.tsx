@@ -14,6 +14,11 @@ const SignOutButton: FC<SignOutButtonProps>  = ({}) => {
 
     try{
       await signOut
+      // toast({
+      //   title : 'Success signing out',
+      //   message : 'SignOut is working',
+      //   type : 'success',
+      //  })
     } catch (error) {
        toast({
         title : 'Error signing out',
