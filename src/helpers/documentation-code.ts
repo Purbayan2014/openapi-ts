@@ -1,7 +1,7 @@
 export const nodejs = `const axios = require("axios");
 const options = {
     method: 'POST',
-    url: 'https://plagarismapi.com/api/v1/plagarism',
+    url: 'https://openapi-ts.vercel.app/api/v1/similarity',
     params: {
       text1: 'First text',
       text2: 'Second text'
@@ -18,7 +18,7 @@ axios.request(options).then(function (response) {
 });`
 
 export const python = `import requests
-url = 'https://plagarismapi.com/api/v1/plagarism'
+url = 'https://openapi-ts.vercel.app/api/v1/similarity'
 api_key = 'YOUR_API_KEY'
 text1 = 'First text'
 text2 = 'Second text'
@@ -54,7 +54,7 @@ int main() {
     curl_global_init(CURL_GLOBAL_DEFAULT);
     curl = curl_easy_init();
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "https://plagarismapi.com/api/v1/plagarism");
+        curl_easy_setopt(curl, CURLOPT_URL, "https://openapi-ts.vercel.app/api/v1/similarity");
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "text1=First%20text&text2=Second%20text");
         curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "POST");
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
@@ -90,7 +90,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            URL url = new URL("https://plagarismapi.com/api/v1/plagarism");
+            URL url = new URL("https://openapi-ts.vercel.app/api/v1/similarity");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setDoOutput(true);
@@ -163,7 +163,7 @@ export const rust = `extern crate reqwest;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Set endpoint URL
-    let url = "https://plagarismapi.com/api/v1/plagarism";
+    let url = "https://openapi-ts.vercel.app/api/v1/similarity";
 
     // Set request payload
     let payload = r#"{"text1": "First text", "text2": "Second text"}"#;
@@ -193,7 +193,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 // export const bash = `#!/bin/bash
 
 // # Set endpoint URL
-// url="https://plagarismapi.com/api/v1/plagarism"
+// url="https://openapi-ts.vercel.app/api/v1/similarity"
 
 // # Set request payload
 // payload='{"text1": "First text", "text2": "Second text"}'
