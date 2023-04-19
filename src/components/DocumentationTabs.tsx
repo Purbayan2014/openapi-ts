@@ -30,7 +30,7 @@ const DocumentationTabs: FC = () => {
           </Simplebar>
         </TabsContent>
               
-      <TabsContent value='c++'>
+      <TabsContent value='cpp'>
       <Simplebar forceVisible='y'>
       <Code animated code={cpp} language='cpp' show />
       </Simplebar>
