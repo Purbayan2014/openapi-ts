@@ -2,7 +2,7 @@ import { withMethods } from "@/lib/api-middlewares/with-method";
 import { NextApiRequest, NextApiResponse } from "next";
 import { RevokeApiData } from "@/types/api";
 import { db } from "@/lib/db";
-import { authOptions } from '../../../lib/auth';
+import { authOptions } from '@/lib/auth';
 import { getServerSession } from 'next-auth';
 import {z} from 'zod'
 
@@ -36,7 +36,7 @@ const handler = async (
 
         // if the user doesnt have an api key
         if(!existingApiKey) {
-            return res.status(400).json({
+            return res.status(500).json({
                 error : 'You dont have an api key',
                 success: false
             })
@@ -50,6 +50,7 @@ const handler = async (
             },
           })
 
+    return res.status(200).json({error: null, success : true})        
     } catch(err) {
         // incase of zod Error
         if(err instanceof z.ZodError) {
@@ -61,7 +62,7 @@ const handler = async (
 
         // incase of unknown error types
         return res
-                .status(500)
+                .status(400)
                 .json({
                     error : "Internal Server Error",
                     success : false
